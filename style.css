@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppons','sans-serif';
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(125deg, #5cd3e5, #4bf65c);
+    padding: 10px;
+}
+
+.card {
+    outline: none;
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    padding: 40px 30px 70px;
+    margin: 100px auto 20px;
+    border-radius: 10px;
+}
+
+.card h1 {
+    display: flex;
+    color: #002765;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.card h1 img {
+    width: 38px;
+    margin-left: 10px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    padding-left: 20px;
+    margin: 10px auto 30px;
+    border-radius: 20px;
+}
+
+.search input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 20px;
+}
+
+.search button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #f57710;
+    color: #fff;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 20px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px; /* Adjust the left positioning based on your design */
+}
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li::before {
+    background-image: url('./images/unchecked.png');
+}
+
+ul li.checked::before {
+    background-image: url('./images/checked.png');
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background: #edeef0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+
+    .search input {
+        margin-bottom: 10px;
+    }
+
+    .search button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        max-width: 90%;
+    }
+
+    .card h1 {
+        font-size: 20px;
+    }
+
+    .search input {
+        font-size: 16px;
+    }
+
+    .search button {
+        font-size: 16px;
+    }
+
+    ul li {
+        font-size: 16px;
+    }
+
+    ul li span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .search button {
+        padding: 14px 20px;
+    }
+}
